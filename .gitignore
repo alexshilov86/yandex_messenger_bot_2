@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+*.pyc
+certs/
+base_data.json
+bot_server.log
+google_service_account.json
+update_base_info.json

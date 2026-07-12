@@ -71,7 +71,7 @@ async def handle_webhook(request: Request) -> JSONResponse:
         display_name,
         text
     )
-    # logger.info("========================")
+    logger.info(payload)
 
     updates = payload.get("updates", [])
     if not isinstance(updates, list):
@@ -124,3 +124,6 @@ async def handle_webhook(request: Request) -> JSONResponse:
     # logger.info(result)
 
     return JSONResponse(status_code=200, content=result)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)

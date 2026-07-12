@@ -62,4 +62,3 @@ def msg_by_nakl(nakl):
 
     return msg
 
-print (msg_by_nakl("26-03681066599"))

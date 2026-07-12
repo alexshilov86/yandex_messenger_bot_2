@@ -69,6 +69,7 @@ async def test_update_data_from_base():
 async def main():
     await test_update_data_from_base()
 
-if __name__ == "__main__":
-    asyncio.run(main())
+# if __name__ == "__main__":
+#     asyncio.run(main())
 
+print (need_update())

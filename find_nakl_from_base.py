@@ -45,7 +45,7 @@ def find_nakl_from_base(nakl):
                     "_row_index": row_idx,
                     "values": row
                 }
-        return {"error": True, "msg": "Накладная не найдена"}
+        return {"error": True, "msg": "Накладная " + nakl + " не найдена"}
 
 def msg_by_nakl(nakl):
     # функция формирует текстовую строку для накладной

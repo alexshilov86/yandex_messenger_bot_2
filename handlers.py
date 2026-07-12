@@ -104,7 +104,7 @@ async def handle_message_logic(parsed: Dict[str, Any]) -> str:
     chat_id = parsed.get("chat_id")
 
     if need_update:
-        await update_data_from_base
+        success = await update_data_from_base()
 
 
     if not text:

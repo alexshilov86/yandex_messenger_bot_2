@@ -3,7 +3,7 @@ import logging
 import aiohttp
 from typing import Dict, Any
 import asyncio
-
+from find_nakl_from_base import msg_by_nakl
 logger = logging.getLogger(__name__)
 
 BOT_TOKEN = os.getenv("YANDEX_BOT_TOKEN", "")
@@ -105,7 +105,7 @@ async def handle_message_logic(parsed: Dict[str, Any]) -> str:
     if not text:
         response_text = f"Привет, {user_name}! В твоём сообщении нет текста."
     else:
-        response_text = text.upper()
+        response_text = msg_by_nakl(text) # функция, которая принимает текст пользователя и формирует ответ
 
     # Отправляем ответ в чат
     if chat_id:

@@ -4,6 +4,7 @@ import aiohttp
 from typing import Dict, Any
 import asyncio
 from find_nakl_from_base import msg_by_nakl
+from data_from_base_update import update_data_from_base, need_update
 logger = logging.getLogger(__name__)
 
 BOT_TOKEN = os.getenv("YANDEX_BOT_TOKEN", "")
@@ -101,6 +102,10 @@ async def handle_message_logic(parsed: Dict[str, Any]) -> str:
     text = parsed.get("text", "")
     user_name = parsed.get("user_name", "пользователь")
     chat_id = parsed.get("chat_id")
+
+    if need_update:
+        update_data_from_base
+
 
     if not text:
         response_text = f"Привет, {user_name}! В твоём сообщении нет текста."
